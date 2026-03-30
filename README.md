@@ -1,2 +1,2 @@
 # Wood
-Wood Hope World
+Wood World
