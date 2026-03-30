@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unity & Peace | A Wish for the World</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sky-blue: #e0f2f7;
+            --deep-blue: #2c3e50;
+            --accent-gold: #d4af37;
+            --soft-white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(180deg, #f0f8ff 0%, #e6f3ff 100%);
+            color: var(--deep-blue);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background Elements */
+        .dove-bg {
+            position: fixed;
+            font-size: 2rem;
+            opacity: 0.2;
+            z-index: -1;
+            animation: fly 15s linear infinite;
+        }
+
+        @keyframes fly {
+            0% { transform: translate(-100vw, 100vh) rotate(0deg); }
+            100% { transform: translate(100vw, -100vh) rotate(20deg); }
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 20px 40px;
+            max-width: 800px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #1a5f7a;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .main-content {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            max-width: 700px;
+            width: 90%;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .quote-container {
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        #quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            line-height: 1.6;
+            color: #34495e;
+            transition: opacity 0.5s ease;
+        }
+
+        .cta-button {
+            background-color: #5dade2;
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(93, 173, 226, 0.3);
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: #3498db;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(93, 173, 226, 0.4);
+        }
+
+        .world-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 40px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+
+        .peace-symbol {
+            color: #5dade2;
+            font-size: 1.5rem;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            .main-content { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Background Doves -->
+    <div class="dove-bg" style="top: 10%; left: -10%; animation-delay: 0s;">🕊️</div>
+    <div class="dove-bg" style="top: 40%; left: -10%; animation-delay: 5s;">🕊️</div>
+    <div class="dove-bg" style="top: 70%; left: -10%; animation-delay: 2s;">🕊️</div>
+
+    <header>
+        <div class="world-icon">🌍</div>
+        <h1>May Peace Prevail on Earth</h1>
+        <p class="subtitle">"Peace is not merely a distant goal that we seek, but a means by which we arrive at that goal."</p>
+    </header>
+
+    <main class="main-content">
+        <div class="quote-container">
+            <p id="quote">Click the button below to receive a message of hope.</p>
+        </div>
+        <button class="cta-button" onclick="generateQuote()">Spread the Light</button>
+        
+        <div style="margin-top: 40px;">
+            <p style="font-weight: 300; line-height: 1.8;">
+                In a world of diversity, let our common humanity be the bridge. 
+                Let us choose dialogue over conflict, empathy over hatred, 
+                and love over fear. Every small act of kindness is a step toward global harmony.
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p>Created with <span class="peace-symbol">☮</span> for a better tomorrow</p>
+        <p>&copy; 2023 Global Peace Initiative</p>
+    </footer>
+
+    <script>
+        const quotes = [
+            "“When the power of love overcomes the love of power, the world will know peace.” — Jimi Hendrix",
+            "“Peace begins with a smile.” — Mother Teresa",
+            "“Darkness cannot drive out darkness; only light can do that. Hate cannot drive out hate; only love can do that.” — Martin Luther King Jr.",
+            "“Imagine all the people living life in peace. You may say I'm a dreamer, but I'm not the only one.” — John Lennon",
+            "“If we are to teach real peace in this world, we shall have to begin with the children.” — Mahatma Gandhi",
+            "“Peace is a journey of a thousand miles and it must be taken one step at a time.” — Lyndon B. Johnson",
+            "“Lord, make me an instrument of thy peace. Where there is hatred, let me sow love.” — Francis of Assisi",
+            "“World peace begins with inner peace.” — Dalai Lama"
+        ];
+
+        function generateQuote() {
+            const quoteElement = document.getElementById('quote');
+            
+            // Fade out
+            quoteElement.style.opacity = 0;
+            
+            setTimeout(() => {
+                const randomIndex = Math.floor(Math.random() * quotes.length);
+                quoteElement.innerText = quotes[randomIndex];
+                // Fade in
+                quoteElement.style.opacity = 1;
+            }, 500);
+
+            // Create a temporary "peace" effect
+            createFloatingHeart();
+        }
+
+        function createFloatingHeart() {
+            const heart = document.createElement('div');
+            heart.innerHTML = '🤍';
+            heart.style.position = 'fixed';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.bottom = '0';
+            heart.style.fontSize = '2rem';
+            heart.style.transition = 'transform 3s ease-out, opacity 3s';
+            heart.style.zIndex = '1000';
+            heart.style.pointerEvents = 'none';
+            
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.style.transform = `translateY(-100vh) scale(1.5)`;
+                heart.style.opacity = '0';
+            }, 50);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 3000);
+        }
+
+        // Initial Quote
+        window.onload = generateQuote;
+    </script>
+</body>
+</html>
